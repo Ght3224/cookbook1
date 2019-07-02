@@ -14,7 +14,7 @@ class Api::RecipesController < ApplicationController
     the_id = params[:id]
 
     @recipe = Recipe.find_by(id: the_id)
-
+    #@ingredients
     render 'show.json.jb'
   end 
 
