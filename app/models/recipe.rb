@@ -5,4 +5,14 @@ class Recipe < ApplicationRecord
     ingredients.split(", ")
   end 
 
-end
+
+
+  def prep_time_conversion 
+    hours = prep_time.to_i/60 
+    minutes = prep_time.to_i%60
+    "#{hours.to_s} hours #{minutes.to_s} minutes"
+  end 
+
+
+end 
+
