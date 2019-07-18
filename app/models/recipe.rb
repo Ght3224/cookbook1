@@ -1,6 +1,6 @@
 class Recipe < ApplicationRecord
 
-
+belongs_to :user 
   def example_method 
     ingredients.split(", ")
   end 
@@ -14,5 +14,4 @@ class Recipe < ApplicationRecord
   end 
 
 
-end 
-
+end

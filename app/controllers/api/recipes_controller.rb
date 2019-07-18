@@ -20,16 +20,18 @@ class Api::RecipesController < ApplicationController
 
     @recipe = Recipe.find_by(id: the_id)
     #@ingredients
-    render 'show.json.jb'
+    render 'show.html.erb'
   end 
 
 
 
   def create 
     @recipe = Recipe.new(
-      name: params[:input_name],
-      ingredients: params[:input_ingredients], 
-      prep_time: params[:input_prep_time]).save 
+      name: params[:name],
+      ingredients: params[:ingredients], 
+      prep_time: params[:prep_time], 
+      user_id: params[:user_id]
+      ).save 
     render 'create.json.jb'
   end 
 
